@@ -136,6 +136,10 @@ set number
 " Prompt reload if file has changed
 au CursorHold * checktime
 
+" Open buffers on the right and bottom
+set splitright
+set splitbelow
+
 " Navigate between visible buffers with Ctrl + hjkl
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
