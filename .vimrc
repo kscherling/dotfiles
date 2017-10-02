@@ -42,12 +42,7 @@ function! <SID>StripTrailingWhitespaces()
   %s/\s\+$//e
   call cursor(l, c)
 endfun
-map <C-h> <C-w>h
 
-map <C-j> <C-w>j
-
-map <C-k> <C-w>k
-map <C-l> <C-w>l
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " NERDTree
