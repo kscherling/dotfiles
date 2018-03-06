@@ -4,13 +4,11 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'godlygeek/tabular' "Used by vim-markdown
-Plugin 'plasticboy/vim-markdown'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim' " search filenames
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-endwise' " Adds 'end' and other things automatically in Ruby
-Plugin 'tpope/vim-rails' " Navigation and rails, rake access
 Plugin 'tomtom/tcomment_vim' " gc to toggle comments
 Plugin 'tpope/vim-fugitive' " git
 Plugin 'tpope/vim-surround' "
@@ -24,11 +22,11 @@ Plugin 'pangloss/vim-javascript' " Better JS highlighting and indenting
 Plugin 'Raimondi/delimitMate' " Autoclosing of quotes, parens, etc.
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'scrooloose/syntastic'
-Plugin 'mtscout6/syntastic-local-eslint.vim' " Use local eslint install
 Plugin 'ElmCast/elm-vim'
 Plugin 'avh4/elm-format'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'kristijanhusak/vim-hybrid-material'
+Plugin 'w0rp/ale'
 call vundle#end()
 filetype plugin indent on
 
@@ -48,11 +46,9 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 " NERDTree
 let NERDTreeHijackNetrw=1
 nnoremap <leader>n :NERDTreeToggle<cr>
-nnoremap <leader>f :NERDTreeFind<cr>
 
 " Reloading convenience commands
 nnoremap <leader>so :source $MYVIMRC<cr>
-nnoremap <leader>vi :e ~/.vimrc<cr>
 nnoremap <leader>pi :PluginInstall<cr>:q<cr>
 
 " Ctrl-p https://github.com/ctrlpvim/ctrlp.vim
@@ -78,7 +74,9 @@ else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
-colorscheme monokai
+set background=dark
+colorscheme hybrid_reverse
+
 set wildignore+=*/tmp*/,*.swp,*.zip,*.scssc,*/generated/*,*/images/*,*/rails-bundle.js*,*/public,*/node_modules/*,*/bower_components/*
 
 " Text settings
@@ -144,29 +142,10 @@ noremap <C-l> <C-w>l
 let g:mustache_abbreviations = 1
 let g:elm_format_autosave = 1
 
-" Syntastic settings
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" Syntastic checkers config
-let g:syntastic_ruby_checkers = ["rubocop"]
-let g:syntastic_elm_checkers = ["elm_make"]
-let g:syntastic_javascript_checkers = ["eslint"]
-let g:syntastic_handlebars_checkers  = ['handlebars']
-let g:syntastic_loc_list_height = 5
-let g:syntastic_filetype_map = {
-      \   'html.handlebars': 'handlebars',
-      \   'hbs': 'handlebars',
-      \ }
-
-" Style Syntastic signs
-let g:syntastic_error_symbol = "☠"
-let g:syntastic_warning_symbol = "⚠️"
-let g:syntastic_style_warning_symbol = "⚠️"
-let g:syntastic_style_error_symbol = "☢"
-hi link SyntasticErrorSign SignColumn
-hi link SyntasticWarningSign SignColumn
+" Ale
+let g:ale_sign_error = "☠"
+let g:ale_sign_warning = "⚠️"
+let g:airline#extensions#ale#enabled = 1
 
 " Convert old-style Ruby hashes to new symbol-key hashes
 command! -range=% ConvertHashes <line1>,<line2>s/:\(\w\+\)\ =>/\1:/g
