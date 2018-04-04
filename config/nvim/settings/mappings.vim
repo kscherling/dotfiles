@@ -18,7 +18,6 @@ inoremap Jk <esc>
 nnoremap <leader>pi :PlugInstall<cr>
 nnoremap <leader>pc :PlugClean<cr>
 nnoremap <leader>so :source $MYVIMRC<cr>
-nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Use tab for autocompletion
 inoremap <silent><expr> <TAB>

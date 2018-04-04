@@ -38,6 +38,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
+Plug 'tomtom/tcomment_vim' " gc to toggle comments
 
 " Syntax colors
 Plug 'kristijanhusak/vim-hybrid-material'
