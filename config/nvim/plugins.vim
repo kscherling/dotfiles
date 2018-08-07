@@ -12,6 +12,10 @@ Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'js', 'js
 Plug 'neoclide/vim-jsx-improve', { 'for': ['javascript', 'js', 'jsx'] }
 Plug '1995eaton/vim-better-javascript-completion', { 'for': ['javascript', 'js', 'jsx'] }
 
+" Typescript
+Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript'] }
+Plug 'mhartington/nvim-typescript', { 'for': ['typescript'] }
+
 " GraphQL
 Plug 'jparise/vim-graphql'
 
@@ -19,10 +23,6 @@ Plug 'jparise/vim-graphql'
 Plug 'tpope/vim-endwise' " Adds 'end' and other things automatically in Ruby
 
 " Text
-
-" Typescript
-Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript'] }
-Plug 'mhartington/nvim-typescript', { 'for': ['typescript'] }
 
 " Tests
 
