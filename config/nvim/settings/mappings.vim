@@ -12,9 +12,6 @@ nnoremap <C-j> <C-W><C-j>
 nnoremap <C-k> <C-W><C-k>
 nnoremap <C-l> <C-W><C-l>
 
-inoremap jk <esc>
-inoremap Jk <esc>
-
 nnoremap <leader>pi :PlugInstall<cr>
 nnoremap <leader>pc :PlugClean<cr>
 nnoremap <leader>so :source $MYVIMRC<cr>

@@ -1,11 +1,14 @@
 let g:ale_linters = {
 \  'javascript': ['eslint', 'flow'],
-\  'typescript': ['tsserver', 'typescript-eslint-parser']
+\  'typescript': ['tsserver', 'typescript-eslint-parser'],
+\  'python': ['flake8']
 \}
 
 let g:ale_fixers = {
 \  'javascript': ['prettier'],
-\  'typescript': ['prettier']
+\  'typescript': ['prettier'],
+\  'python': ['yapf'],
+\  'elixir': ['mix_format']
 \}
 
 let g:ale_fix_on_save = 1

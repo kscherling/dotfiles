@@ -39,6 +39,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'tomtom/tcomment_vim' " gc to toggle comments
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Syntax colors
 Plug 'kristijanhusak/vim-hybrid-material'
