@@ -2,10 +2,6 @@ call plug#begin('~/.config/nvim/plugged')
 " Language pack that includes most languages
 Plug 'sheerun/vim-polyglot'
 
-" Elixir
-Plug 'avdgaag/vim-phoenix', { 'for': 'elixir' }
-Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
-
 " JavaScript
 Plug 'moll/vim-node', { 'for': ['javascript', 'js', 'jsx'] }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'js', 'jsx'] }

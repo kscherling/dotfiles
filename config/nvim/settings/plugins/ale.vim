@@ -1,7 +1,8 @@
 let g:ale_linters = {
 \  'javascript': ['eslint', 'flow'],
 \  'typescript': ['tsserver', 'typescript-eslint-parser'],
-\  'python': ['flake8']
+\  'python': ['flake8'],
+\  'ruby': []
 \}
 
 let g:ale_fixers = {
