@@ -10,13 +10,16 @@ Plug '1995eaton/vim-better-javascript-completion', { 'for': ['javascript', 'js',
 
 " Typescript
 Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript'] }
-Plug 'mhartington/nvim-typescript', { 'for': ['typescript'] }
+Plug 'mhartington/nvim-typescript', { 'for': ['typescript'], 'do': './install.sh' }
 
 " GraphQL
 Plug 'jparise/vim-graphql'
 
 " Ruby
 Plug 'tpope/vim-endwise' " Adds 'end' and other things automatically in Ruby
+
+" Markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
 " Text
 
