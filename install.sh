@@ -27,4 +27,7 @@ echo "Setting up neovim..."
 echo "Setting up Vim Plug..."
 ./scripts/setup_vim_plug.sh
 
+echo "Installing NVM and Yarn..."
+./scripts/setup_npm.sh
+
 source $HOME/.bash_profile
