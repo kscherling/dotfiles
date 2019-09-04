@@ -20,6 +20,8 @@ EOF
   chmod +x .git/hooks/prepare-commit-msg
 }
 
+alias clear_local_branches='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
+
 ##### NODE #####
 alias nombom='npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install'
 
