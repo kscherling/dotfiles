@@ -28,6 +28,6 @@ echo "Setting up Vim Plug..."
 ./scripts/setup_vim_plug.sh
 
 echo "Installing NVM and Yarn..."
-./scripts/setup_npm.sh
+./scripts/setup_yarn.sh
 
 source $HOME/.bash_profile

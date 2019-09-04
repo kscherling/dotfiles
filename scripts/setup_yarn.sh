@@ -7,7 +7,7 @@ if [ ! -x "$(command -v nvm)" ]; then
   . ~/.bash_profile
 fi
 
-if [ ! -x "$(command -v npm)" ]; then
+if [ ! -x "$(command -v node)" ]; then
   nvm install --lts
 fi
 
