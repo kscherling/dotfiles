@@ -30,4 +30,7 @@ echo "Setting up Vim Plug..."
 echo "Installing NVM and Yarn..."
 ./scripts/setup_yarn.sh
 
+echo "Installing PyEnv..."
+./scripts/setup_python.sh
+
 source $HOME/.bash_profile

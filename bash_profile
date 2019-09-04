@@ -3,12 +3,15 @@
 export HISTCONTROL=ignoreboth
 export HISTFILESIZE=1000000
 export EDITOR='nvim'
-export PYENV_ROOT=/usr/local/opt/pyenv
 
 PROMPT_COMMAND="updateps1;history -a"
 PATH="$PATH:$HOME/.local/bin"
-export PATH="$(pyenv root)/shims:$PATH"
-eval "$(pyenv init -)"
+
+if [ -x "$(command -v pyenv)" ]; then
+  export PYENV_ROOT=/usr/local/opt/pyenv
+  export PATH="$(pyenv root)/shims:$PATH"
+  eval "$(pyenv init -)"
+fi
 
 updateps1() {
   EXITSTATUS="$?"
