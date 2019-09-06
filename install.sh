@@ -17,6 +17,11 @@ if [ ! -f $HOME/.tmux.conf ]; then
   ln -s $currentdir/.tmux.conf $HOME/.tmux.conf
 fi
 
+if [ ! -f $HOME/.local/bin/tat ]; then
+  echo "Linking tat"
+  ln -s $currentdir/bin/tat $HOME/.local/bin/tat
+fi
+
 echo "Installing Node (NVM)..."
 ./scripts/setup_node.sh
 
