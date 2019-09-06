@@ -3,6 +3,7 @@ export HISTCONTROL=ignoreboth
 export HISTFILESIZE=1000000
 export EDITOR='nvim'
 
+PROMPT_COMMAND="updateps1;history -a"
 PATH="$PATH:$HOME/.local/bin"
 
 # Prompt
@@ -18,7 +19,17 @@ gitbranch="\[\e[38;5;136m\]"
 prompt="\[\e[38;5;243m\]"
 nc="\[\e[m\]"
 
-export PS1="${user}@\u ${directory}\W${gitbranch}\$git_branch\$git_dirty ${prompt}$ ${nc}"
+updateps1() {
+  EXITSTATUS="$?"
+  GIT_BRANCH=""
+  git rev-parse 2>/dev/null
+
+  if [ $? == "0" ]; then
+    PS1="${directory}\W ${gitbranch}\$git_branch \$git_dirty ${prompt}△  ${nc}"
+  else
+    PS1="${directory}\W ${prompt}△  ${nc}"
+  fi
+}
 
 if [ -f $HOME/.bash_aliases ]; then
   source $HOME/.bash_aliases
