@@ -10,7 +10,3 @@ fi
 if [ ! -x "$(command -v node)" ]; then
   nvm install --lts
 fi
-
-if [ ! -x "$(command -v yarn)" ]; then
-  curl -o- -L https://yarnpkg.com/install.sh | bash
-fi
