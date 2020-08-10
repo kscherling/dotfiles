@@ -1,7 +1,7 @@
 #!/bin/sh
 export HISTCONTROL=ignoreboth
 export HISTFILESIZE=1000000
-export EDITOR='nvim'
+export EDITOR='vim'
 
 PROMPT_COMMAND="updateps1;history -a"
 PATH="$PATH:$HOME/.local/bin"
@@ -43,8 +43,12 @@ if [ -f $HOME/.profile ]; then
   source $HOME/.profile
 fi
 
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+fi
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH="$PATH"
+export PATH="$PATH:$HOME/Library/Python/2.7/bin"
