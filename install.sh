@@ -2,27 +2,16 @@
 
 currentdir=$(pwd)
 
-if [ ! -f $HOME/.bash_profile ]; then
-  echo "Linking bash profile"
-  ln -s $currentdir/.bash_profile $HOME/.bash_profile
-fi
+echo 'Creating symbolic links...'
 
-if [ ! -f $HOME/.bash_aliases ]; then
-  echo "Linking bash aliases"
-  ln -s $currentdir/.bash_aliases $HOME/.bash_aliases
-fi
+echo "Linking .zshrc -> $HOME/.zshrc"
+ln -sf $currentdir/.zshrc $HOME/.zshrc
 
-if [ ! -f $HOME/.tmux.conf ]; then
-  echo "Linking bash aliases"
-  ln -s $currentdir/.tmux.conf $HOME/.tmux.conf
-fi
+echo "Linking .tmux.conf -> $HOME/.tmux.conf"
+ln -sf $currentdir/.tmux.conf $HOME/.tmux.conf
 
-if [ ! -f $HOME/.local/bin/tat ]; then
-  echo "Linking tat"
-  ln -s $currentdir/bin/tat $HOME/.local/bin/tat
-fi
+echo "Linking tat script -> $HOME/.bin/tat"
+mkdir -p $HOME/.bin
+ln -sf $currentdir/bin/tat $HOME/.bin/tat
 
-echo "Installing Node (NVM)..."
-./scripts/setup_node.sh
-
-source $HOME/.bash_profile
+echo 'Done ✨'
