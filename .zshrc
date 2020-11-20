@@ -15,12 +15,14 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git)
+plugins=(git asdf)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 export EDITOR="vim"
+
+# PATH
 
 export PATH=$PATH:~/.bin
