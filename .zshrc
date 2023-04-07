@@ -25,4 +25,11 @@ export EDITOR="vim"
 
 # PATH
 
-export PATH=$PATH:~/.bin
+export PATH=$PATH:~/.bin:
+
+# Add homebrew to path
+eval "$(/opt/homebrew/bin/brew shellenv)"
+# pnpm
+export PNPM_HOME="/Users/kscherling_1/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
