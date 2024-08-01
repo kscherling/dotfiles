@@ -20,16 +20,30 @@ plugins=(git asdf)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
 export EDITOR="vim"
 
 # PATH
+# export HOMEBREW_PREFIX="/opt/homebrew"
 
-export PATH=$PATH:~/.bin:
+export PATH="~/.bin:$PATH"
+
+# Rancher
+export PATH="~/.rd/bin:$PATH"
+
+# oktaws
+export PATH="~/.cargo/bin:$PATH"
+
+# pnpm
+export PATH="/Users/kscherling/Library/pnpm:$PATH"
 
 # Add homebrew to path
-eval "$(/opt/homebrew/bin/brew shellenv)"
-# pnpm
-export PNPM_HOME="/Users/kscherling_1/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
+# eval $(/opt/homebrew/bin/brew shellenv)
+
+#asdf
+# . $(brew --prefix asdf)/libexec/asdf.sh
+
+# pnpm endexport REQUESTS_CA_BUNDLE=/Library/Application\ Support/Netskope/STAgent/download/nscacert_combined.pem
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/kscherling/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
